@@ -1,0 +1,54 @@
+﻿<Window x:Class="PresentacionWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PresentacionWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Personal">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <GroupBox Header="Nueva Tarea" Grid.Row="0" Margin="5">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox x:Name="PersonalNewTaskTextBox" Width="200" Margin="5"/>
+                            <Button Content="Agregar Tarea" Click="PersonalAddTask_Click" Margin="5"/>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <WrapPanel Grid.Row="1" x:Name="PersonalTaskWrapPanel" Margin="5">
+                        <!-- Las tareas se iran agregando aqui -->
+                    </WrapPanel>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Trabajo">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- GroupBox para nueva tarea -->
+                    <GroupBox Header="Nueva Tarea" Grid.Row="0" Margin="5">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox x:Name="TrabajoNewTaskTextBox" Width="200" Margin="5"/>
+                            <Button Content="Agregar Tarea" Click="TrabajoAddTask_Click" Margin="5"/>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <!-- WrapPanel para listar las tareas -->
+                    <WrapPanel Grid.Row="1" x:Name="TrabajoTaskWrapPanel" Margin="5">
+                        <!-- Las tareas se iran agregando aqui -->
+                    </WrapPanel>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
